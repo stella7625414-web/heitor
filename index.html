@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#668653">
+  <title>Confirme sua presença | 1 aninho do Heitor</title>
+  <style>
+    :root {
+      --green: #55784a;
+      --green-dark: #38563a;
+      --cream: #fffaf0;
+      --paper: #fffdf7;
+      --yellow: #f4d77b;
+      --brown: #76543d;
+      --ink: #394638;
+      --muted: #71806c;
+      --line: #e7e4d5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background:
+        radial-gradient(ellipse at 8% 15%, rgba(244,215,123,.35), transparent 24rem),
+        radial-gradient(ellipse at 92% 80%, rgba(135,169,113,.22), transparent 26rem),
+        #f5f1e4;
+      display: grid;
+      place-items: center;
+      padding: 28px 16px;
+    }
+    .page { width: min(100%, 570px); }
+    .card {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid rgba(85,120,74,.16);
+      border-radius: 28px;
+      box-shadow: 0 18px 55px rgba(67,79,53,.13);
+    }
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 30px 24px 27px;
+      color: white;
+      background: linear-gradient(145deg, #789765, #55784a);
+    }
+    .hero::before, .hero::after {
+      content: "✿  ·  ❋  ·  ✿";
+      position: absolute;
+      color: rgba(255,255,255,.27);
+      font-size: 23px;
+      letter-spacing: 8px;
+    }
+    .hero::before { top: 18px; left: 15px; transform: rotate(-18deg); }
+    .hero::after { right: 12px; bottom: 18px; transform: rotate(12deg); }
+    .farm-icons { font-size: 34px; letter-spacing: 5px; margin-bottom: 10px; }
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #f9e9b6;
+    }
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(37px, 9vw, 52px);
+      line-height: 1.05;
+      font-weight: 700;
+    }
+    .subtitle { margin: 10px 0 0; font-size: 16px; color: #f8f6e9; }
+    .ribbon {
+      display: inline-block;
+      margin-top: 19px;
+      padding: 8px 17px;
+      border-radius: 999px;
+      color: var(--green-dark);
+      background: var(--yellow);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+    .content { padding: 28px clamp(20px, 6vw, 38px) 30px; }
+    .intro { margin: 0 0 23px; text-align: center; line-height: 1.55; color: #68745f; }
+    form { display: grid; gap: 17px; }
+    label { display: block; margin-bottom: 7px; font-size: 13px; font-weight: 800; color: var(--green-dark); }
+    .field-wrap { position: relative; }
+    .field-icon {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      font-size: 17px; pointer-events: none;
+    }
+    input {
+      width: 100%; min-height: 50px; padding: 12px 14px 12px 43px;
+      border: 1.5px solid var(--line); border-radius: 13px;
+      background: #fffefa; color: var(--ink); font: inherit; font-size: 15px;
+      outline: none; transition: border-color .2s, box-shadow .2s;
+    }
+    input:focus { border-color: #789765; box-shadow: 0 0 0 3px rgba(120,151,101,.15); }
+    input::placeholder { color: #a6aa9b; }
+    .hint { margin: 6px 2px 0; color: #899080; font-size: 11px; }
+    button {
+      width: 100%; min-height: 54px; margin-top: 5px; border: 0; border-radius: 14px;
+      background: #557f4c; color: white; font: inherit; font-weight: 800; font-size: 15px;
+      cursor: pointer; box-shadow: 0 6px 0 #3d6339; transition: transform .15s, box-shadow .15s;
+    }
+    button:hover { background: #496f42; }
+    button:active { transform: translateY(3px); box-shadow: 0 3px 0 #3d6339; }
+    .whatsapp { margin-right: 8px; font-size: 19px; vertical-align: -2px; }
+    .note {
+      margin: 20px 0 0; padding: 13px 15px; border-radius: 12px;
+      background: #f4f5e9; color: #68745f; text-align: center; font-size: 12px; line-height: 1.5;
+    }
+    .footer {
+      padding: 0 18px 22px; text-align: center; color: #8b927f; font-size: 12px;
+    }
+    .footer span { color: #c18b54; }
+    @media (max-width: 390px) {
+      body { padding: 14px 10px; }
+      .hero { padding: 27px 16px 24px; }
+      .content { padding-top: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="title">
+      <header class="hero">
+        <div class="farm-icons" aria-hidden="true">🐮 🌻 🐷</div>
+        <p class="eyebrow">Um dia especial na fazendinha</p>
+        <h1 id="title">Heitor faz<br>1 aninho!</h1>
+        <p class="subtitle">Você é nosso convidado para essa alegria!</p>
+        <div class="ribbon">🌾 CONFIRME SUA PRESENÇA 🌾</div>
+      </header>
+
+      <div class="content">
+        <p class="intro">
+          Estamos preparando uma festinha cheia de carinho!<br>
+          Preencha os dados abaixo para confirmar sua presença.
+        </p>
+
+        <form id="rsvpForm">
+          <div>
+            <label for="guestName">Nome do convidado</label>
+            <div class="field-wrap">
+              <span class="field-icon" aria-hidden="true">👤</span>
+              <input id="guestName" name="guestName" type="text" placeholder="Digite seu nome completo" autocomplete="name" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="quantity">Quantidade de pessoas</label>
+            <div class="field-wrap">
+              <span class="field-icon" aria-hidden="true">👨‍👩‍👧</span>
+              <input id="quantity" name="quantity" type="number" min="1" max="30" step="1" placeholder="Ex.: 3" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <div>
+            <label for="inviteCode">Código do convite</label>
+            <div class="field-wrap">
+              <span class="field-icon" aria-hidden="true">🎟️</span>
+              <input id="inviteCode" name="inviteCode" type="text" placeholder="Digite o código recebido" autocomplete="off" required>
+            </div>
+            <p class="hint">Use o código que os pais do Heitor entregaram junto com o convite.</p>
+          </div>
+
+          <button type="submit"><span class="whatsapp">◉</span> Confirmar pelo WhatsApp</button>
+        </form>
+
+        <p class="note">Ao clicar, o WhatsApp será aberto com sua confirmação pronta para enviar. 💚</p>
+      </div>
+      <footer class="footer">Esperamos você para comemorar! <span>♥</span></footer>
+    </section>
+  </main>
+
+  <script>
+    const WHATSAPP_NUMBER = "5538997313965"; // Brasil + DDD 38 + número informado
+
+    document.getElementById("rsvpForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("guestName").value.trim();
+      const quantity = document.getElementById("quantity").value;
+      const code = document.getElementById("inviteCode").value.trim();
+
+      if (!name || !quantity || !code || Number(quantity) < 1 || !Number.isInteger(Number(quantity))) {
+        alert("Por favor, confira e preencha todos os campos corretamente.");
+        return;
+      }
+
+      const message =
+        "Olá! Quero confirmar minha presença no aniversário de 1 aninho do Heitor! 🎉🐮\n\n" +
+        "Nome do convidado: " + name + "\n" +
+        "Quantidade de pessoas: " + quantity + "\n" +
+        "Código do convite: " + code + "\n\n" +
+        "Até a festinha! 🌻";
+
+      const whatsappUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
